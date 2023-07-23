@@ -1,4 +1,4 @@
-Flask Python App and React on AWS EKS Cluster
+# Flask Python App and React on AWS EKS Cluster
 This repository contains the Terraform configuration and Kubernetes manifests for deploying a Flask-Python backend application and a React frontend on an AWS EKS cluster. Additionally, it includes Dockerfiles for both the backend and frontend applications.
 
 Overview
