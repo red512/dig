@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: webapp-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: projectred521/react-fe:v0.1.0
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            cpu: "100m"
+        ports:
+        - containerPort: 3000
+
