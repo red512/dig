@@ -15,12 +15,12 @@ module "vpc" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 
-  # enable_nat_gateway     = true
-  # enable_vpn_gateway     = true
-  # one_nat_gateway_per_az = false
+  enable_nat_gateway     = true
+  enable_vpn_gateway     = true
+  one_nat_gateway_per_az = false
 
-  # enable_dns_hostnames = true
-  # single_nat_gateway   = true
+  enable_dns_hostnames = true
+  single_nat_gateway   = true
 
   tags = {
     Environment = "dev"
