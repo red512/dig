@@ -1,13 +1,17 @@
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: frontend-hpa
-  namespace: webapp-flask-fe
+  name: webapp-flask
+  namespace: webapp-flask-be
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: frontend-deployment  # Update this with your actual Deployment name
+    name: backend-deployment
   minReplicas: 1
-  maxReplicas: 3
-  targetCPUUtilizationPercentage: 10
+  maxReplicas: 2
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 50
