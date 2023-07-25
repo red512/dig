@@ -1,4 +1,4 @@
-#In we'll need to implement ELB I'll prepared this TF code
+#In case we'll need to implement ELB I'll prepared this TF code
 
 # module "aws_load_balancer_controller_irsa_role" {
 #   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"

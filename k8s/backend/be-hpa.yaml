@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: backend-hpa
-  namespace: webapp-flask
+  namespace: webapp-flask-be
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
