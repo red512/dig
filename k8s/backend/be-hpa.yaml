@@ -1,7 +1,7 @@
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: backend-hpa
+  name: webapp-flask-
   namespace: webapp-flask-be
 spec:
   scaleTargetRef:
@@ -9,47 +9,9 @@ spec:
     kind: Deployment
     name: backend-deployment
   minReplicas: 1
-  maxReplicas: 10
-  behavior:
-    scaleUp:
-      policies:
-      - type: Pods
-        value: 1
-        periodSeconds: 60
-    scaleDown:
-      policies:
-      - type: Percent
-        value: 10
-        periodSeconds: 60
+  maxReplicas: 2
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 80
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 70
-
-
-
-# apiVersion: autoscaling/v2beta1
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: webapp-flask
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: backend-deployment
-#   minReplicas: 1
-#   maxReplicas: 2
-#   metrics:
-#     - type: Resource
-#       resource:
-#         name: cpu
-#         targetAverageUtilization: 50
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 50
