@@ -1,8 +1,12 @@
 name: Deployment 2
-on: push
+on:
+  [workflow_dispatch]
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flask-pytorch-backend-master/frontend 
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
