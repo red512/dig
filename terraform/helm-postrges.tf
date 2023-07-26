@@ -8,7 +8,7 @@ resource "helm_release" "postgres" {
 
   set {
     name  = "global.postgresql.auth.database" # The configuration path for metrics database
-    value = "test"                            # Replace "my_database" with the name of your PostgreSQL database
+    value = "testdb"                          # Replace "my_database" with the name of your PostgreSQL database
   }
   values = [
     file("values/postgres-values.yaml")
