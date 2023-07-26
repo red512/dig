@@ -7,4 +7,11 @@ metrics:
     additionalLabels:
       prometheus: devops
 
+persistence:
+  enabled: true
+  storageClass: "" # If you want to use a specific storage class, provide its name here
+  accessMode: "ReadWriteOnce"
+  size: "1Gi" # Adjust the size as per your PVC size and requirements
+  existingClaim: "postgres-pvc" # Reference the PVC created earlier
+
 
