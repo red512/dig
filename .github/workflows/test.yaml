@@ -1,4 +1,4 @@
-name: Deployment 2
+name: simulate tests
 on:
   [workflow_dispatch]
 jobs:
@@ -16,5 +16,5 @@ jobs:
         run: npm run test
       - name: Lint code
         run: npm run lint
-      - name: Build App
-        run: npm run build
+      # - name: Build App
+      #   run: npm run build
