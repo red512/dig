@@ -1,14 +1,4 @@
 ---
-defaultRules:
-  rules:
-    etcd: false
-    kubeScheduler: false
-kubeControllerManager:
-  enabled: false
-kubeEtcd:
-  enabled: false
-kubeScheduler:
-  enabled: false
 prometheus:
   prometheusSpec:
     serviceMonitorSelector:
@@ -16,5 +6,7 @@ prometheus:
         prometheus: devops
 commonLabels:
   prometheus: devops
-# grafana:
-#   adminPassword: test1test1test1
+grafana:
+  adminPassword: test123test123
+
+

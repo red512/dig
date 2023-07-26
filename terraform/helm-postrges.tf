@@ -1,14 +1,9 @@
-# provider "helm" {
-#   kubernetes {
-#     config_path = "/Users/vango/.kube/config"
-#   }
-# }
 resource "helm_release" "postgres" {
   name             = "postgres"
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "postgresql"
   version          = "12.5.6"
-  namespace        = "db"
+  namespace        = "postgres"
   create_namespace = true
 
   set {

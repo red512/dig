@@ -1,8 +1,10 @@
 ---
-postgresqlDatabase: test
+postgresqlDatabase: testdb
 metrics:
   enabled: true
   serviceMonitor:
-    enabled: enable
+    enabled: true
     additionalLabels:
       prometheus: devops
+
+
